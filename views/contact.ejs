@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Contact Us</title>
+</head>
+
+<body>
+    <header>
+        Zach's Pet Adoption Agency
+        <a href="/"><img src="/pictures/peticon.png" alt="pet_icon"></a>
+        <a id="clock" style="position: fixed; right: 10px; font-size: 20px;"></a>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/find">Find a dog/cat</a>
+        <a href="/dog">Dog Care</a>
+        <a href="/cat">Cat Care</a>
+        <a href="/giveaway">Have a pet to give away</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/register">Create Account</a>
+        <% if (loggedIn) { %>
+            <a href="/logout" id="logout">Logout</a>
+        <% } %> 
+    </nav>
+    <div class="content">
+        <div class="topic">
+            <h1>Contact Us</h1>
+            <h4>If you wish to contact me in any way, below is my contact information!</h4>
+            <div class="contactus">
+                <div class="innercontact">
+                    <h2>Zachary Corber</h2>
+                </div>
+                <div class="innercontact">
+                    <h4>Student ID #: 40246724</h4>
+                </div>
+                <div class="innercontact">
+                    <h4>Email: zacharycorber@yahoo.ca</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer><a href="/privacy">Privacy/Disclaimer Statement</a></footer>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

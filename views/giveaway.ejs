@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Have a pet to give away</title>
+</head>
+
+<body>
+    <header>
+        Zach's Pet Adoption Agency
+        <a href="/"><img src="/pictures/peticon.png" alt="pet_icon"></a>
+        <a id="clock" style="position: fixed; right: 10px; font-size: 20px;"></a>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/find">Find a dog/cat</a>
+        <a href="/dog">Dog Care</a>
+        <a href="/cat">Cat Care</a>
+        <a href="/giveaway">Have a pet to give away</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/register">Create Account</a>
+        <% if (loggedIn) { %>
+            <a href="/logout" id="logout">Logout</a>
+        <% } %> 
+    </nav>
+    <div class="content">
+        <div class="topic">
+            <h1>Have a pet to give away</h1>
+            <form name="pet-adoption-form" id="pet-adoption-form" method="POST" action="/giveaway-pet">
+                <div class="form-group">
+                    <label for="pet-type">Do you have a dog or a cat?</label>
+                    <select id="pet-type" name="pet_type" required>
+                        <option value="">Select...</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                    </select>
+                </div><br>
+
+                <div class="form-group">
+                    <label>What is the breed of the pet?</label>
+                    <input type="text" id="radio_specific" name="breed">
+                </div><br>
+
+                <div class="form-group">
+                    <label for="age-preference">Current age of animal:</label>
+                    <select id="age-preference" name="age_preference" required>
+                        <option value="">Select...</option>
+                        <option value="puppy/kitten">Puppy/Kitten</option>
+                        <option value="young">Young</option>
+                        <option value="adult">Adult</option>
+                        <option value="senior">Senior</option>
+                    </select>
+                </div><br>
+
+                <div class="form-group">
+                    <label for="gender-preference">Gender:</label>
+                    <select id="gender-preference" name="gender_preference" required>
+                        <option value="">Select...</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div><br>
+
+                <div class="form-group">
+                    <label>Does the animal get along with (check all that apply):</label>
+                    <div>
+                        <input type="checkbox" id="other-dogs" name="other-dogs">
+                        <label for="other-dogs">Other dogs</label>
+                        <input type="checkbox" id="other-cats" name="other-cats">
+                        <label for="other-cats">Other cats</label>
+                        <input type="checkbox" id="small-children" name="small-children">
+                        <label for="small-children">Small children</label>
+                    </div>
+                </div><br>
+
+                <div class="form-group">
+                    <label>Tell us about your pet!</label><br>
+                    <textarea name="comments" placeholder="Brag about your pet!"></textarea>
+                </div><br>
+
+                <div class="form-group">
+                    <label>Current Owner Information:</label><br>
+                    <label>First Name:</label>
+                    <input type="text" id="first-name" name="first-name">
+                    <label>Last Name:</label>
+                    <input type="text" id="last-name" name="last-name">
+                    <label>Email:</label>
+                    <input type="email" id="email" name="email">
+                </div><br>
+
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer><a href="/privacy">Privacy/Disclaimer Statement</a></footer>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Privacy/Disclaimer</title>
+</head>
+
+<body>
+    <header>
+        Zach's Pet Adoption Agency
+        <a href="/"><img src="/pictures/peticon.png" alt="pet_icon"></a>
+        <a id="clock" style="position: fixed; right: 10px; font-size: 20px;"></a>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/find">Find a dog/cat</a>
+        <a href="/dog">Dog Care</a>
+        <a href="/cat">Cat Care</a>
+        <a href="/giveaway">Have a pet to give away</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/register">Create Account</a>
+        <% if (loggedIn) { %>
+            <a href="/logout" id="logout">Logout</a>
+        <% } %> 
+    </nav>
+    <div class="content">
+        <div class="topic">
+            <h1>Privacy/Disclaimer Statement</h1>
+            <p style="font-size: 30px;">Using this website guarantees that the user's information will not be sold or
+                misused. This website is not responsible for any incorrect information posted by a pet owner. This
+                website is for educational purposes only.</p>
+        </div>
+    </div>
+    <footer><a href="/privacy">Privacy/Disclaimer Statement</a></footer>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

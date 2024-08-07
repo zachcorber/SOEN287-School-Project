@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cat Care</title>
+</head>
+
+<body>
+    <header>
+        Zach's Pet Adoption Agency
+        <a href="/"><img src="/pictures/peticon.png" alt="pet_icon"></a>
+        <a id="clock" style="position: fixed; right: 10px; font-size: 20px;"></a>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/find">Find a dog/cat</a>
+        <a href="/dog">Dog Care</a>
+        <a href="/cat">Cat Care</a>
+        <a href="/giveaway">Have a pet to give away</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/register">Create Account</a>
+        <% if (loggedIn) { %>
+            <a href="/logout" id="logout">Logout</a>
+        <% } %> 
+    </nav>
+    <div class="content">
+        <div class="topic">
+            <h1>Cat Care</h1>
+            <h3>Steps to take to properly care for your cat</h3>
+            <ul>
+                <li>Select a vet and take your cat for regular check-ups</li>
+                <li>Feed your cat proper food and water several times per day</li>
+                <li>Familiarize your cat with their litter box</li>
+                <li>Groom your cat regularly</li>
+                <li>Make time for engaging playtime</li>
+                <li>Give your cat lots of love and attention</li>
+            </ul><br>
+            <a href="https://www.purina.com/articles/cat/health/routine-care/how-to-care-for-a-cat" target="_blank">Link to some of these cat tips</a>
+        </div>
+    </div>
+    <footer><a href="/privacy">Privacy/Disclaimer Statement</a></footer>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

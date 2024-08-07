@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Register</title>
+</head>
+
+<body>
+    <header>
+        Zach's Pet Adoption Agency
+        <a href="/"><img src="/pictures/peticon.png" alt="pet_icon"></a>
+        <a id="clock" style="position: fixed; right: 10px; font-size: 20px;"></a>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/find">Find a dog/cat</a>
+        <a href="/dog">Dog Care</a>
+        <a href="/cat">Cat Care</a>
+        <a href="/giveaway">Have a pet to give away</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/register">Create Account</a>
+        <% if (loggedIn) { %>
+            <a href="/logout" id="logout">Logout</a>
+        <% } %> 
+    </nav>
+    <div class="content">
+        <div class="topic">
+            <div class="form-container">
+                <h1>Create an Account</h1>
+                <form id="signup-form" action="/register" method="POST" name="registerForm" onsubmit="return validateRegistration()">
+                    <input type="username" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                    <div>
+                        <p>Username can only contain letters and numbers</p>
+                        <p>Letters can be uppercase or lowercase</p>
+                        <p>Password must have at least 4 characters and at least 1 letter and 1 number</p>
+                    </div>
+                </form>
+                <% if (success !== null) { %>
+                    <% if (success) { %>
+                        <h3>Registration successful!</h3>
+                    <% } else { %>
+                        <h3>Registration failed. Username already exists.</h3>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <footer><a href="/privacy">Privacy/Disclaimer Statement</a></footer>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

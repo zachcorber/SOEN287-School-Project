@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        Zach's Pet Adoption Agency
+        <a href="/"><img src="/pictures/peticon.png" alt="pet_icon"></a>
+        <a id="clock" style="position: fixed; right: 10px; font-size: 20px;"></a>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/find">Find a dog/cat</a>
+        <a href="/dog">Dog Care</a>
+        <a href="/cat">Cat Care</a>
+        <a href="/giveaway">Have a pet to give away</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/register">Create Account</a>
+        <% if (loggedIn) { %>
+            <a href="/logout" id="logout">Logout</a>
+        <% } %> 
+    </nav>
+    <div class="content">
+        <div id="home">
+            <h1>Home</h1>
+            <p>Welcome to Zach's Pet Adoption Agency. In this website, you will be able to browse through all the
+                available pets that are up for adoption. You can also find a dog or cat that you would like to adopt.
+                We also provide information on how to take care of your dog or cat. If you have a pet that you would
+                like to give away, you can also do so on this website. If you have any questions, feel free to contact
+                us. We are here to help you find the perfect pet for you.</p>
+            <a href="https://thenounproject.com/browse/icons/term/pets/" target="_blank">Link to the pet logo/icon in the header</a>
+        </div>
+    </div>
+    <footer><a href="/privacy">Privacy/Disclaimer Statement</a></footer>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

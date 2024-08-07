@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Browse Available Pets</title>
+</head>
+
+<body>
+    <header>
+        Zach's Pet Adoption Agency
+        <a href="/"><img src="/pictures/peticon.png" alt="pet_icon"></a>
+        <a id="clock" style="position: fixed; right: 10px; font-size: 20px;"></a>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/find">Find a dog/cat</a>
+        <a href="/dog">Dog Care</a>
+        <a href="/cat">Cat Care</a>
+        <a href="/giveaway">Have a pet to give away</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/register">Create Account</a>
+        <% if (loggedIn) { %>
+            <a href="/logout" id="logout">Logout</a>
+        <% } %> 
+    </nav>
+    <div class="content">
+        <div class="topic">
+            <h1>Available Pets</h1>
+            <div class="browse-container">
+                <div class="pet">
+                    <h2>Max</h2>
+                    <a href="https://www.britannica.com/animal/shih-tzu" target="_blank"><img
+                            src="pictures/shihtzu.webp" alt="Shih Tzu"></a>
+                    <div>
+                        <p>Breed: Shih Tzu</p>
+                        <p>Age: 2 years</p>
+                        <p>Gender: Male</p>
+                        <p>Gets along with everyone!</p>
+                        <button class="button" onclick="changeColor(this)">Interested</button>
+                    </div>
+                </div>
+                <div class="pet">
+                    <h2>Whiskers</h2>
+                    <a href="https://www.catster.com/cat-breeds/different-types-of-calico-cats/" target="_blank"><img
+                            src="pictures/calico.jpg" alt="Calico"></a>
+                    <div>
+                        <p>Breed: Calico</p>
+                        <p>Age: 3 years</p>
+                        <p>Gender: Female</p>
+                        <p>Gets along with everyone!</p>
+                        <button class="button" onclick="changeColor(this)">Interested</button>
+                    </div>
+                </div>
+                <div class="pet">
+                    <h2>Zeke</h2>
+                    <a href="https://www.borrowmydoggy.com/doggypedia/dog-breed-guides/miniature-poodle"
+                        target="_blank"><img src="pictures/poodle.jpg" alt="Poodle"></a>
+                    <div>
+                        <p>Breed: Poodle</p>
+                        <p>Age: 1 year</p>
+                        <p>Gender: Male</p>
+                        <p>Gets along with everyone!</p>
+                        <button class="button" onclick="changeColor(this)">Interested</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer><a href="/privacy">Privacy/Disclaimer Statement</a></footer>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

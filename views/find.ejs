@@ -23,7 +23,7 @@
         <a href="/contact">Contact Us</a>
         <a href="/register">Create Account</a>
         <% if (loggedIn) { %>
-            <a href="/logout" id="logout">Logout</a>
+            <a href="/logout" id="logout" onclick="logoutMessage()">Logout</a>
         <% } %> 
     </nav>
     <div class="content">
@@ -41,10 +41,10 @@
 
                 <div class="form-group">
                     <label>Breed preference:</label>
-                    <input type="radio" id="breed_specific" name="breed">Specific
-                    <input type="radio" id="breed_doesntmatter" name="breed">Doesn't Matter<br>
+                    <input type="radio" id="breed_specific" name="breed" value="specific">Specific
+                    <input type="radio" id="breed_doesntmatter" name="breed" value="doesnt_matter">Doesn't Matter<br>
                     <label>If you selected specific, identify the breed:</label>
-                    <input type="text" id="identifybreed" placeholder="Identify Specific Breed">
+                    <input type="text" id="identifybreed" placeholder="Identify Specific Breed" name="breed_text">
                 </div><br>
 
                 <div class="form-group">

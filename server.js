@@ -29,8 +29,8 @@ app.get('/', (req, res) => {
   res.render('index', { loggedIn: req.session.username });
 });
 
-app.get('/browse', (req, res) => {
-  res.render('browse', { loggedIn: req.session.username });
+app.get('/results', (req, res) => {
+  res.render('results', { loggedIn: req.session.username });
 });
 
 app.get('/login', (req, res) => {
@@ -81,12 +81,14 @@ app.post('/register', (req, res) => {
     const users = data.split('\n').map((line) => line.split(':')[0]);
 
     if (users.includes(username)) {
+      console.log("Registration failed. Username already exists.")
       return res.render('register', { loggedIn: req.session.username, success: false });
     } else {
       fs.appendFile('login.txt', `${username}:${password}\n`, (err) => {
         if (err) {
           return res.status(500).send('Error saving new user');
         }
+        console.log("Registration successful.")
         res.render('register', { loggedIn: req.session.username, success: true });
       });
     }
@@ -174,11 +176,38 @@ app.get('/logout', (req, res) => {
   });
 });
 
+// Find pet form submission
 app.post('/find_pet', (req, res) => {
-  const { pet_type, breed, age_preference, gender_preference } = req.body;
-  res.redirect('/browse');
+  const { pet_type, breed, breed_text, age_preference, gender_preference, } = req.body;
+  console.log(req.body);
+  var selectedBreed = "";
+  if (breed === "specific") {
+    selectedBreed = breed_text;
+  } else {
+    selectedBreed = "doesnt_matter";
+  }
+
+  fs.readFile('available_pets.txt', 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).send('Server error');
+    }
+    const lines = data.split('\n');
+    const pets = lines.map((line) => {
+      const [id, username, pet_type, breed, age, gender] = line.split(':');
+      return { username: username, pet_type: pet_type, breed: breed, age: age, gender: gender };
+    }).filter((pet) => {
+      type_good = pet.pet_type.toLowerCase() === pet_type.toLowerCase();
+      breed_good = (selectedBreed === "doesnt_matter") || (pet.breed === selectedBreed);
+      age_good = (age_preference === "doesnt_matter") || (pet.age.toLowerCase() === age_preference.toLowerCase());
+      gender_good = (gender_preference === "doesnt_matter") || (pet.gender.toLowerCase() == gender_preference.toLowerCase());
+      return type_good && breed_good && age_good && gender_good;
+    });
+
+  res.render('results', { loggedIn: req.session.username, pets: pets });
+  });
 });
 
+//Profile page as test for session
 app.get('/profile', (req, res) => {
   const username = req.session.username;
   if (username) {

@@ -23,7 +23,7 @@
         <a href="/contact">Contact Us</a>
         <a href="/register">Create Account</a>
         <% if (loggedIn) { %>
-            <a href="/logout" id="logout">Logout</a>
+            <a href="/logout" id="logout" onclick="logoutMessage()">Logout</a>
         <% } %> 
     </nav>
     <div class="content">
@@ -38,6 +38,7 @@
                         <p>Username can only contain letters and numbers</p>
                         <p>Letters can be uppercase or lowercase</p>
                         <p>Password must have at least 4 characters and at least 1 letter and 1 number</p>
+                        <p>Already have an account? <a href="/login">Login</a></p>
                     </div>
                 </form>
                 <% if (success !== null) { %>

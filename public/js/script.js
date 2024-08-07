@@ -169,12 +169,6 @@ function validateRegistration() {
     return true;
 }
 
-//Display message when logging out
-document.addEventListener("DOMContentLoaded", () => {
-    const logout = document.getElementById("logout");
-    if (logout) {
-        logout.addEventListener("click", () => {
-            alert("You have been logged out.");
-        });
-    }
-});
+function logoutMessage() {
+    alert("You have been logged out.");
+}

@@ -30,17 +30,26 @@
         <div class="topic">
             <h1>Available Pets</h1>
             <div class="browse-container">
-                <% pets.forEach(function(pet) { %>
-                    <div class="pet">
-                        <h2><%= pet.pet_type %></h2>
-                        <div>
-                            <p>Breed: <%= pet.breed %></p>
-                            <p>Age: <%= pet.age %></p>
-                            <p>Gender: <%= pet.gender %></p>
-                            <button class="button" onclick="changeColor(this)">Interested</button>
-                        </div>
-                    </div>
-                    <% }) %>
+                <% let displayLimit=4; let count=0; %>
+                    <% pets.forEach(function(pet) { %>
+                        <% if(count < displayLimit) { %>
+                            <div class="pet">
+                                <h2>
+                                    <%= pet.pet_type %>
+                                </h2>
+                                <div>
+                                    <p>Breed: <%= pet.breed %>
+                                    </p>
+                                    <p>Age: <%= pet.age %>
+                                    </p>
+                                    <p>Gender: <%= pet.gender %>
+                                    </p>
+                                    <button class="button" onclick="changeColor(this)">Interested</button>
+                                </div>
+                            </div>
+                            <% count++; %>
+                                <% } %>
+                                    <% }) %>
             </div>
         </div>
     </div>

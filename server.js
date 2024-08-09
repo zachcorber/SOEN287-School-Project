@@ -165,21 +165,9 @@ app.post('/giveaway-pet', (req, res) => {
   });
 });
 
-// Logout of session
-app.get('/logout', (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      return res.status(500).send('Error logging out');
-    }
-    console.log("Logout successful");
-    res.redirect('/');
-  });
-});
-
 // Find pet form submission
 app.post('/find_pet', (req, res) => {
   const { pet_type, breed, breed_text, age_preference, gender_preference, } = req.body;
-  console.log(req.body);
   var selectedBreed = "";
   if (breed === "specific") {
     selectedBreed = breed_text;
@@ -196,7 +184,7 @@ app.post('/find_pet', (req, res) => {
       const [id, username, pet_type, breed, age, gender] = line.split(':');
       return { username: username, pet_type: pet_type, breed: breed, age: age, gender: gender };
     }).filter((pet) => {
-      type_good = pet.pet_type.toLowerCase() === pet_type.toLowerCase();
+      type_good = pet.pet_type === pet_type;
       breed_good = (selectedBreed === "doesnt_matter") || (pet.breed === selectedBreed);
       age_good = (age_preference === "doesnt_matter") || (pet.age.toLowerCase() === age_preference.toLowerCase());
       gender_good = (gender_preference === "doesnt_matter") || (pet.gender.toLowerCase() == gender_preference.toLowerCase());
@@ -215,6 +203,17 @@ app.get('/profile', (req, res) => {
   } else {
     res.redirect('/');
   }
+});
+
+// Logout of session
+app.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).send('Error logging out');
+    }
+    console.log("Logout successful");
+    res.redirect('/');
+  });
 });
 
 app.listen(port, () => {

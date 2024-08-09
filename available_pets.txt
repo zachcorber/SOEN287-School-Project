@@ -2,3 +2,8 @@
 2:zachcorber:dog:poodle:old:male
 3:zachcorber:cat:calico:young:female
 4:zachcorber:cat:black:old:male
+5:erinburak:dog:husky:young:female
+6:jessesugar:cat:calico:old:male
+7:jessesugar:dog:goldenretriever:young:female
+8:zachcorber:dog:shihtzu:old:male
+9:zachcorber:dog:lab:old:male

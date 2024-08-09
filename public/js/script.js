@@ -124,7 +124,7 @@ document.getElementById('pet-adoption-form').addEventListener('submit', function
 function validateLogin() {
     var username = document.forms["loginForm"]["username"].value;
     var password = document.forms["loginForm"]["password"].value;
-    var usernamePattern = /^[a-zA-Z0-9]{2,20}$/;
+    var usernamePattern = /^[a-zA-Z0-9]{4,20}$/;
     var passwordPattern = /^[a-zA-Z0-9]{4,20}$/;
 
     if (!usernamePattern.test(username)) {
@@ -145,7 +145,7 @@ function validateRegistration() {
     var password = document.forms["registerForm"]["password"].value;
     const hasDigit = /\d/;
     const hasLetter = /[a-zA-Z]/;
-    const usernamePattern = /^[a-zA-Z0-9]{2,20}$/;
+    const usernamePattern = /^[a-zA-Z0-9]{4,20}$/;
 
     if (!usernamePattern.test(username)) {
         alert("Invalid username format.");
@@ -169,6 +169,7 @@ function validateRegistration() {
     return true;
 }
 
+//When the logout button is clicked, a message will appear
 function logoutMessage() {
     alert("You have been logged out.");
 }
